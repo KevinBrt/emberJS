@@ -1,0 +1,38 @@
+<div style="margin-left:2%;">
+	<h2 class="ui header">
+		<i class="calendar icon"></i>
+	  <div class="content">models/Developer <div class="sub header">Data administration</div>
+	  </div>
+	</h2>
+
+	{{#link-to 'developers.new' class="ui teal button"}}
+		Ajouter un developper...
+	{{/link-to}}
+	<table class="ui celled table" style="width:50%;">
+	  <thead>
+	    <tr>
+	    	<th>Identity</th>
+	    	<th>Actions</th>
+	  	</tr>
+	  </thead>
+	  <tbody>
+	  	{{#each model as |dev|}}
+	  		<tr>
+		  		<td>
+		  			{{dev.identity}}
+		  		</td>
+		  		<td>
+		  			{{#link-to 'developers.edit' dev class="ui basic circular icon button"}}
+						<i class="edit icon"></i>
+					{{/link-to}}
+					{{#link-to 'developers.delete' dev class="ui basic circular icon button"}}
+						<i class="remove red icon"></i>
+					{{/link-to}}
+		  		</td>
+		  	</tr>
+		{{/each}}
+	  </tbody>
+	</table>
+</div>
+
+{{outlet}}

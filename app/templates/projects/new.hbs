@@ -1,0 +1,10 @@
+<div style="margin-left:2%;">
+	<div class="ui header" style="margin-top:1%;">Ajout/modif project</div>
+	{{input placeholder="Name" value=model.copy.name class="ui input"}}<br/><br/>
+    {{textarea placeholder="Description" value=model.copy.descriptif class="ui input"}}<br/><br/>
+    {{input type="date" placeholder="Start Date" value=model.copy.creationDate class="ui input"}}<br/><br/>
+    {{input type="date" placeholder="Due Date" value=model.copy.dueDate class="ui input"}}<br/><br/>
+	<button {{action "save" model}} class="ui positive button"><i class="check icon"></i>Enregistrer</button>
+	<a class="ui negative button" href="/projects"><i class="close icon"></i>Annuler</a>
+</div>
+{{outlet}}

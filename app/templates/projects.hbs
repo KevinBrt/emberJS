@@ -1,0 +1,50 @@
+<div style="margin-left:2%;">
+	<h2 class="ui header">
+		<i class="calendar icon"></i>
+	  <div class="content">models/Project <div class="sub header">Data administration</div>
+	  </div>
+	</h2>
+
+	{{#link-to 'projects.new' class="ui teal button"}}
+		Ajouter un nouveau projet
+	{{/link-to}}
+	<table class="ui celled table" style="width:50%;">
+	  <thead>
+	    <tr>
+	    	<th>Name</th>
+            <th>Description</th>
+            <th>StartDate</th>
+            <th>DueDate</th>
+	    	<th>Actions</th>
+	  	</tr>
+	  </thead>
+	  <tbody>
+	  	{{#each model as |project|}}
+	  		<tr>
+		  		<td>
+		  			{{project.name}}
+		  		</td>
+                  <td>
+		  			{{project.descriptif}}
+		  		</td>
+                  <td>
+		  			{{moment-format project.creationDate 'MM/DD/YYYY' 'MM-YYYY-DD'}}
+		  		</td>
+                  <td>
+                      {{moment-format project.dueDate 'MM/DD/YYYY' 'MM-YYYY-DD'}}
+		  		</td>
+		  		<td>
+		  			{{#link-to 'projects.edit' project class="ui basic circular icon button"}}
+						<i class="edit icon"></i>
+					{{/link-to}}
+					{{#link-to 'projects.delete' project class="ui basic circular icon button"}}
+						<i class="remove red icon"></i>
+					{{/link-to}}
+		  		</td>
+		  	</tr>
+		{{/each}}
+	  </tbody>
+	</table>
+</div>
+
+{{outlet}}

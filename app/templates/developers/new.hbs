@@ -1,0 +1,7 @@
+<div style="margin-left:2%;">
+	<div class="ui header" style="margin-top:1%;">Ajout/modif dev</div>
+	{{input value=model.copy.identity class="ui input"}}
+	<button {{action "save" model}} class="ui positive button"><i class="check icon"></i>Enregistrer</button>
+	<a class="ui negative button" href="/developers"><i class="close icon"></i>Annuler</a>
+</div>
+{{outlet}}

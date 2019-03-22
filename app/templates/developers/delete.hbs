@@ -1,0 +1,14 @@
+<div style="margin-left:2%;">
+		<div class="ui header" style="margin-top:1%;">Delete dev</div>
+		<div class="ui icon message">
+			<i class="question circle icon"></i>
+			<div class="content">
+				<div class="header" style="display:inline">Confirmez la suppression &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+				<button {{action "delete" model}} class="ui positive button"><i class="check icon"></i>Enregistrer</button>
+            {{#link-to 'developers' class="ui negative button" }}
+						<i class="close icon"></i>Annuler
+					{{/link-to}}
+			</div>
+		</div>
+	</div>
+{{outlet}}
