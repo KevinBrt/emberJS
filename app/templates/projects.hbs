@@ -28,10 +28,10 @@
 		  			{{project.descriptif}}
 		  		</td>
                   <td>
-		  			{{moment-format project.creationDate 'MM/DD/YYYY' 'MM-YYYY-DD'}}
+		  			{{moment-format project.creationDate 'DD/MM/YYYY' 'YYYY-MM-DD'}}
 		  		</td>
                   <td>
-                      {{moment-format project.dueDate 'MM/DD/YYYY' 'MM-YYYY-DD'}}
+                      {{moment-format project.dueDate 'DD/MM/YYYY' 'YYYY-MM-DD'}}
 		  		</td>
 		  		<td>
 		  			{{#link-to 'projects.edit' project class="ui basic circular icon button"}}
