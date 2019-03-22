@@ -4,6 +4,19 @@
     {{textarea placeholder="Description" value=model.copy.descriptif class="ui input"}}<br/><br/>
     {{input type="date" placeholder="Start Date" value=model.copy.creationDate class="ui input"}}<br/><br/>
     {{input type="date" placeholder="Due Date" value=model.copy.dueDate class="ui input"}}<br/><br/>
+
+
+	<select value={{model.copy.owner}} >
+		<option disabled selected> -- Choose a developer owner -- </option>
+		{{#each model.owner as |dev|}}
+			<option value={{dev}}>{{dev.identity}}</option>
+		{{/each}}
+		
+		
+	</select>
+
+
+
 	<button {{action "save" model}} class="ui positive button"><i class="check icon"></i>Enregistrer</button>
 	<a class="ui negative button" href="/projects"><i class="close icon"></i>Annuler</a>
 </div>
