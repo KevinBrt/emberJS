@@ -1,0 +1,24 @@
+<div style="margin-left:2%;">
+	<h2 class="ui header">
+		<i class="folder open icon"></i>
+	  <div class="content">{{model.project.name}} <div class="sub header">{{model.project.descriptif}}</div>
+	  </div>
+	</h2>
+
+    <h1>Stories</h1>
+
+    {{#link-to 'project.newStory' class="ui orange button"}}
+		Ajouter une storie au projet
+	{{/link-to}}
+
+    <div class="ui relaxed divided list">
+        <div class="item">
+            <i class="large github middle aligned icon"></i>
+            <div class="content">
+            <a class="header">Semantic-Org/Semantic-UI</a>
+            <div class="description">Updated 10 mins ago</div>
+            </div>
+        </div>
+    </div>
+</div>    
+{{outlet}}

@@ -16,11 +16,14 @@
             <th>StartDate</th>
             <th>DueDate</th>
 	    	<th>Actions</th>
+				<th>OWNER</th>
 	  	</tr>
 	  </thead>
 	  <tbody>
 	  	{{#each model as |project|}}
+
 	  		<tr>
+					<span hidden="hidden" id="idProject">{{project.id}}</span>
 		  		<td>
 		  			{{project.name}}
 		  		</td>
@@ -34,12 +37,18 @@
                       {{moment-format project.dueDate 'DD/MM/YYYY' 'YYYY-MM-DD'}}
 		  		</td>
 		  		<td>
+						{{#link-to "project" project.id }}
+							Ouvrir le projet
+						{{/link-to}}
 		  			{{#link-to 'projects.edit' project class="ui basic circular icon button"}}
 						<i class="edit icon"></i>
 					{{/link-to}}
 					{{#link-to 'projects.delete' project class="ui basic circular icon button"}}
 						<i class="remove red icon"></i>
 					{{/link-to}}
+		  		</td>
+					<td>
+                      {{project.owner.identity}}
 		  		</td>
 		  	</tr>
 		{{/each}}
